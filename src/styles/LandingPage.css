@@ -1,15 +1,30 @@
-.image {
-    width: 800px;
-    height: 500px;
-    margin-top: 200px;
-}
-
-.fa-solid {
-    margin: 30px;
-    color: orange;
-}
-
-span {
-    font-size: 4rem;
+.titleText {
     color: white;
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.smooth-scroll-button {
+    margin-top: 50px;
+    width: 300px;
+    height: 50px;
+    font-size: 2rem;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.335);
+    cursor: pointer;
+    outline: black;
+    transition: 1s;
+}
+
+.fa-arrow-right {
+    transition: 0.5s;
+}
+
+.smooth-scroll-button:hover {
+    outline: 1px solid white;
+    transform: scale(1.05);
+    .fa-arrow-right {
+        transform: rotate(90deg);
+    }
 }
