@@ -5,6 +5,21 @@ import Projects from '../pages/Projects'
 import '../styles/LandingPage.css'
 import { useState, useEffect } from 'react'
 
+const pages = [{
+    name: "About",
+    page: About
+}, {
+    name: "Projects",
+    page: Projects
+}, {
+    name: "Contact",
+    page: Contact
+}, {
+    name: "Expirience",
+    page: Expirience
+}
+]
+
 export default function LandingPage() {
 
     const [selectedPage, setSelectedPage] = useState<string | null>(null)
@@ -21,7 +36,7 @@ export default function LandingPage() {
             </section>
             <section className='page' id="second-page">
                 <div className="navbar">
-                    <button className={`navbar-button ${selectedPage === "About" ? "selected" : ""}`} onClick={() => setSelectedPage("About")}>ABOUT</button>
+                    <button className={`navbar-button ${selectedPage === "About" ? "selected" : ""}`} onClick={() => setSelectedPage("About")}><span>ABOUT</span></button>
                     <button className={`navbar-button ${selectedPage === "Projects" ? "selected" : ""}`} onClick={() => setSelectedPage("Projects")}>PROJECTS</button>
                     <button className={`navbar-button ${selectedPage === "Contact" ? "selected" : ""}`} onClick={() => setSelectedPage("Contact")}>CONTACT</button>
                     <button className={`navbar-button ${selectedPage === "Expirience" ? "selected" : ""}`} onClick={() => setSelectedPage("Expirience")}>EXPIRIENCE</button>
