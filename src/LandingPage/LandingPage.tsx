@@ -1,3 +1,4 @@
+import { render } from 'react-dom'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Expirience from '../pages/Expirience'
@@ -5,7 +6,12 @@ import Projects from '../pages/Projects'
 import '../styles/LandingPage.css'
 import { useState, useEffect } from 'react'
 
-const pages = [{
+interface iPage {
+    name: string
+    page: React.ComponentType
+}
+
+const pages: iPage[] = [{
     name: "About",
     page: About
 }, {
@@ -17,16 +23,11 @@ const pages = [{
 }, {
     name: "Expirience",
     page: Expirience
-}
-]
+}]
 
 export default function LandingPage() {
 
-    const [selectedPage, setSelectedPage] = useState<string | null>(null)
-
-    useEffect(() => {
-        
-    }, [selectedPage])
+    const [selectedPage, setSelectedPage] = useState<iPage | null>(null)
 
     return (
         <>
@@ -36,17 +37,13 @@ export default function LandingPage() {
             </section>
             <section className='page' id="second-page">
                 <div className="navbar">
-                    <button className={`navbar-button ${selectedPage === "About" ? "selected" : ""}`} onClick={() => setSelectedPage("About")}><span>ABOUT</span></button>
-                    <button className={`navbar-button ${selectedPage === "Projects" ? "selected" : ""}`} onClick={() => setSelectedPage("Projects")}>PROJECTS</button>
-                    <button className={`navbar-button ${selectedPage === "Contact" ? "selected" : ""}`} onClick={() => setSelectedPage("Contact")}>CONTACT</button>
-                    <button className={`navbar-button ${selectedPage === "Expirience" ? "selected" : ""}`} onClick={() => setSelectedPage("Expirience")}>EXPIRIENCE</button>
+                    {pages.map((page: iPage) => (
+                        <button className={`navbar-button ${selectedPage && page.name === selectedPage.name ? "selected" : ""}`} onClick={() => setSelectedPage(page)}>{page.name.toUpperCase()}</button>
+                    ))}
                 </div>
                 {selectedPage &&
                 <div className='component-container'>
-                    {selectedPage === "About" && <About />}
-                    {selectedPage === "Contact" && <Contact />}
-                    {selectedPage === "Projects" && <Projects />}
-                    {selectedPage === "Expirience" && <Expirience />}
+                    {selectedPage && <selectedPage.page />}
                 </div>
                 }
             </section>
