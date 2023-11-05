@@ -2,7 +2,9 @@
 * {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
-    
+}
+
+html {
     ::-webkit-scrollbar {
         display: none;
     }

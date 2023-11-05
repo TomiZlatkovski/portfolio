@@ -21,8 +21,8 @@ export default function Contact() {
 
     return (
         <div className="component">
-            <div className="component-content slide-animation" id="contact">
-                <div className="contact">
+            <div className="component-content" id="contact">
+                <div className="contact slide-animation">
                     <form onSubmit={() => console.log(contactForm)}>
                         <h1 className="contact-title-text">Contact Me</h1>
                         <div className="contact-input-wrapper">
@@ -32,11 +32,11 @@ export default function Contact() {
                         <textarea className="contact-message" name="message" required placeholder="Message" value={contactForm.message} onChange={(e) => setContactForm({...contactForm, message:e.currentTarget.value })}/>
                         <button className="contact-button" type="submit">Send</button>
                     </form>
-                    <div className="platforms">
-                        <img className="platform-icon" src="/images/icons/github.svg" onClick={() => window.open(githubLink)} id="github-icon" />
-                        <img className="platform-icon" src="/images/icons/linkedin.svg" onClick={() => window.open(linkedinLink)} id="linkedin-icon" />
-                        <img className="platform-icon" src="/images/icons/mail.svg" onClick={() => window.location.href=`mailto:${email}`} id="email-icon" title={email} />
-                    </div>
+                </div>
+                <div className="platforms">
+                    <img className="platform-icon" src="/images/icons/github.svg" onClick={() => window.open(githubLink)} id="github-icon" />
+                    <img className="platform-icon" src="/images/icons/linkedin.svg" onClick={() => window.open(linkedinLink)} id="linkedin-icon" />
+                    <img className="platform-icon" src="/images/icons/mail.svg" onClick={() => window.location.href=`mailto:${email}`} id="email-icon" title={email} />
                 </div>
             </div>
         </div>

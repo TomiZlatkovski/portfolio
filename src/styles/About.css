@@ -9,8 +9,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 600px;
+    width: 20%;
+    height: 100%;
     z-index: 0;
 }
 
@@ -18,8 +18,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 600px;
-    width: 400px;
+    height: 70%;
+    width: 20%;
 }
 
 .about-title {
@@ -56,6 +56,6 @@ p:nth-child(2) {
 }
 
 .personal-photo {
-    width: 400px;
-    height: 600px;
+    width: 100%;
+    height: 70%;
 }

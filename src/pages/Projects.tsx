@@ -34,8 +34,8 @@ export default function Projects() {
                         </div>
                     </section>
                 )) : (
-                    <div className='project-container project-slide-in-animation'>
-                        <div className='project-details'>
+                    <div className='project-container'>
+                        <div className='project-details project-slide-in-animation'>
                             <button className='back-button' onClick={() => {setSelectedProject(null); setKey(key*(-1))}}><i className="fa-solid fa-arrow-left"/></button>
                             <h1 className='project-title'>{selectedProject.name}</h1>
                             <div className='project-position-status-wrapper'>
@@ -46,7 +46,7 @@ export default function Projects() {
                         </div>
                         <div className='project-image-container'>
                             {selectedProject.images.map(image => (
-                                <img className='project-image' src={image} />
+                                <img className='project-image project-image-slide-in-animation' src={image} />
                             ))}
                         </div>
                     </div>
